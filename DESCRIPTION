@@ -1,0 +1,29 @@
+Package: dynamr
+Title: A Randomization Approach to Dynamic Analysis of Panel Data
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Daniel",
+           family = "Kent",
+           email = "kent.249@osu.edu",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6322-3696")),
+    person(given = "James",
+           family = "Wilson",
+           role = "aut",
+           email = "jdwilson4@usfca.edu",
+           comment = c(ORCID = "0000-0002-2354-935X")),
+    person(given = "Skyler",
+           family = "Cranmer",
+           email = "cranmer.12@osu.edu",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-6213-6400"))
+    )
+Description: This package test for the presence of time-varying effects in
+  the presence of panel data. It also detects where effect changes occur, 
+  assuming effects are dynamic over time.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    tibble
