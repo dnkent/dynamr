@@ -2,6 +2,8 @@
 
 An R package for the dynamic analysis of panel data. `dynamr` serves two purposes. First, the `pooled_glm_test()` function can be used by a researcher to test whether or not the assumption of stable effects holds when estimating a generalized linear model with panel data. Second, the `dynamr()` function detects where effect changes occur. 
 
+The reference for this method is **A Randomization Approach to Dynamic Analysis of Panel Data**, co-authored with [James D. Wilson](http://jdwilson-statistics.com/) and [Skyler Cranmer](http://www.skylercranmer.net/). The manuscript is currently under review but available upon request. 
+
 ## Installation
 
 To install `dynamr` use the following command and make sure to have `devtools` installed.
