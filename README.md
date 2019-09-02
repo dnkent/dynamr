@@ -64,3 +64,7 @@ stock.p.value <- pooled_glm_test(
 
 stock.p.value$p.value
 ```
+
+## Questions or Bugs
+
+Please send any comments, bugs, or questions to the developer Daniel Kent at kent.249@osu.edu. 
