@@ -43,7 +43,7 @@ stock_dynam
 stock_dynam %>% filter(change == 1)
 ```
 
-- `pooled_glm_test()`: test whether the temporal effect homogeneity holds for coefficients of interest in a generalized linear model using panel data. 
+- `pooled_glm_test()`: test whether the assumption temporal effect homogeneity holds for coefficients of interest in a generalized linear model using panel data. 
 
 ```
 library(ISLR)
