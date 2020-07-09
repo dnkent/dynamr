@@ -89,7 +89,7 @@ dynamr <- function(
     "time" = as.integer(),
     "int_est" = as.numeric(),
     "int_sd" = as.numeric(),
-    "pr_int_change" = as.integer()
+    "pr_int_change" = as.numeric()
   )
   
   # Automate dynamic dynamic by formula terms
@@ -105,6 +105,10 @@ dynamr <- function(
                    paste0("pr_", all.vars(formula[-2])[i], "_change", sep = ""),
       )
   }
+  
+  # Make columns are numeric vars
+  changes <- changes %>%
+    mutate(across(where(is.character), as.numeric))
   
   # Extract coefficients
   for(i in 1:num_models){
