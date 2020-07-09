@@ -2,7 +2,7 @@
 
 An R package for the dynamic analysis of panel data, `dynamr` serves two purposes. First, the `pooled_glm_test()` function can be used by a researcher to test whether or not the assumption of stable effects holds when estimating a generalized linear model with panel data. Second, the `dynamr()` function detects where effect changes occur. 
 
-The reference for this method is **A Randomization Approach to Dynamic Analysis of Panel Data**, co-authored with [James D. Wilson](http://jdwilson-statistics.com/) and [Skyler Cranmer](http://www.skylercranmer.net/). The manuscript is currently under review but available upon request. 
+The reference for this method is **A Permutation-Based Changepoint Technique for Monitoring Effect Sizes**, co-authored with [James D. Wilson](http://jdwilson-statistics.com/) and [Skyler Cranmer](http://www.skylercranmer.net/). The manuscript is currently under review but available upon request. 
 
 ## Installation
 
@@ -21,32 +21,28 @@ estimates, and whether or not the coefficient signals a change in the underlying
 
 ```
 library(ISLR)
-library(dplyr)
+library(dynamr)
 
 data("Weekly")
 
 stock_dynam <- dynamr(
-  dat = Weekly,
-  time_var = "Year",
-  formula = Today ~ Lag1 + Lag2,
-  num_models = 21,
-  window_size = 1,
-  start_time = 1990,
-  end_time = 2010,
-  change_var = "Lag2",
-  family = "gaussian",
-  N = 5000
+    dat = Weekly,
+    time_var = "Year",
+    formula = Today ~ Lag1 + Lag2,
+    window_size = 1,
+    change_var = "Lag2",
+    family = "gaussian",
+    N = 5000
 )
 
 stock_dynam
-
-stock_dynam %>% filter(change == 1)
 ```
 
 - `pooled_glm_test()`: test whether the assumption temporal effect homogeneity holds for coefficients of interest in a generalized linear model using panel data. 
 
 ```
 library(ISLR)
+library(dynamr)
 
 data("Weekly")
 
