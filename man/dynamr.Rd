@@ -2,11 +2,10 @@
 % Please edit documentation in R/dynamr.R
 \name{dynamr}
 \alias{dynamr}
-\title{A Randomization Approach to Dynamic Analysis of Panel Data}
+\title{A Permutation-Based Changepoint Technique for Monitoring Effect Sizes}
 \usage{
-dynamr(dat, time_var, formula, num_models, N = 2000, window_size,
-  start_time, end_time, change_var, family = c("gaussian", "binomial",
-  "poisson"))
+dynamr(dat, time_var, formula, N = 2000, window_size, change_var,
+  family = c("gaussian", "binomial", "poisson"))
 }
 \arguments{
 \item{dat}{Data frame with panel data of interest}
@@ -16,16 +15,10 @@ must be a character}
 
 \item{formula}{Formula for glm object}
 
-\item{num_models}{Number of time-specific models to be ran}
-
 \item{N}{Number of coefficient samples extracted for calculating stable
 statistical behavior, defaults to 2000}
 
 \item{window_size}{Number of time periods per model}
-
-\item{start_time}{First time period value}
-
-\item{end_time}{Last time period value}
 
 \item{change_var}{Variable being checked for time-varying behavior,
 must be a character}
@@ -41,7 +34,7 @@ estimating generalized linear models with panel data.
 }
 \examples{
 library(ISLR)
-library(dplyr)
+library(dynamr)
 
 data("Weekly")
 
@@ -49,10 +42,7 @@ stock_dynam <- dynamr(
  dat = Weekly,
  time_var = "Year",
  formula = Today ~ Lag1 + Lag2,
- num_models = 21,
  window_size = 1,
- start_time = 1990,
- end_time = 2010,
  change_var = "Lag2",
  family = "gaussian",
  N = 5000
@@ -60,5 +50,4 @@ stock_dynam <- dynamr(
 
 stock_dynam
 
-stock_dynam \%>\% filter(change == 1)
 }
