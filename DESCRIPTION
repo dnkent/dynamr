@@ -1,5 +1,5 @@
 Package: dynamr
-Title: A Randomization Approach to Dynamic Analysis of Panel Data
+Title: A Permutation-Based Changepoint Technique for Monitoring Effect Sizes
 Version: 0.0.0.9000
 Authors@R: c(
     person(given = "Daniel",
