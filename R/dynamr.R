@@ -51,6 +51,9 @@ dynamr <- function(
     "poisson"
   )
 ) {
+  require(dplyr)
+  require(tibble)
+
   # Denote start and end times
   start_time <- min(dat[[time_var]], na.rm = TRUE)
   end_time <- max(dat[[time_var]], na.rm = TRUE)
