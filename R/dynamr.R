@@ -102,7 +102,7 @@ dynamr <- function(
                    paste0(all.vars(formula[-2])[i], "_est", sep = ""),
       ) %>%
       add_column(!!
-                   paste0(all.vars(formula[-2])[i], "_sd", sep = ""),
+                   paste0(all.vars(formula[-2])[i], "_se", sep = ""),
       ) %>%
       add_column(!!
                    paste0("pr_", all.vars(formula[-2])[i], "_change", sep = ""),

@@ -16,8 +16,7 @@ devtools::install_github("dnkent/dynamr")
 
 This package contains two primary functions which are briefly described below. For any function named ```function```, type ```?function``` in R to get full documentation.
 
-- `dynamr()`: detect at which time points coefficients in a generalized linear model change. This function produces a tibble with four variables: time points, coefficient estimates at each time point, standard errors for those coefficient
-estimates, and whether or not the coefficient signals a change in the underlying data generating process. 
+- `dynamr()`: detect at which time points coefficients in a generalized linear model change. This function produces a tibble with the following output: time points, coefficient estimates for each time point, standard errors for each coefficient estimate, and the probability that a changepoint occurs for each coefficient estimate at that time period.
 
 ```
 library(ISLR)
