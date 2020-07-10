@@ -4,7 +4,7 @@
 \alias{dynamr}
 \title{A Permutation-Based Changepoint Technique for Monitoring Effect Sizes}
 \usage{
-dynamr(dat, time_var, formula, N = 2000, window_size, change_var,
+dynamr(dat, time_var, formula, N = 2000, window_size,
   family = c("gaussian", "binomial", "poisson"))
 }
 \arguments{
@@ -19,9 +19,6 @@ must be a character}
 statistical behavior, defaults to 2000}
 
 \item{window_size}{Number of time periods per model}
-
-\item{change_var}{Variable being checked for time-varying behavior,
-must be a character}
 
 \item{family}{A description of the error distribution to be used for the
 fitted glm. Currently, there are three options: "gaussian" - multivariate
@@ -43,7 +40,6 @@ stock_dynam <- dynamr(
  time_var = "Year",
  formula = Today ~ Lag1 + Lag2,
  window_size = 1,
- change_var = "Lag2",
  family = "gaussian",
  N = 5000
 )

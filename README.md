@@ -29,7 +29,6 @@ stock_dynam <- dynamr(
     time_var = "Year",
     formula = Today ~ Lag1 + Lag2,
     window_size = 1,
-    change_var = "Lag2",
     family = "gaussian",
     N = 5000
 )

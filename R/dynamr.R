@@ -10,8 +10,6 @@
 #' @param N Number of coefficient samples extracted for calculating stable
 #' statistical behavior, defaults to 2000
 #' @param window_size Number of time periods per model
-#' @param change_var Variable being checked for time-varying behavior,
-#' must be a character
 #' @param family A description of the error distribution to be used for the
 #' fitted glm. Currently, there are three options: "gaussian" - multivariate
 #'  linear regression; "binomial" - multivariate logistic regression; "poisson"
@@ -31,7 +29,6 @@
 #'  time_var = "Year",
 #'  formula = Today ~ Lag1 + Lag2,
 #'  window_size = 1,
-#'  change_var = "Lag2",
 #'  family = "gaussian",
 #'  N = 5000
 #' )
@@ -44,7 +41,6 @@ dynamr <- function(
   formula,
   N = 2000,
   window_size,
-  change_var,
   family = c(
     "gaussian",
     "binomial",
